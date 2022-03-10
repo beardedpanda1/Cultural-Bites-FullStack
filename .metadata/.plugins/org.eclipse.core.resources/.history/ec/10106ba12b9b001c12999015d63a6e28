@@ -1,0 +1,5 @@
+package com.cultural.bites.service;
+
+public interface PostService {
+
+}

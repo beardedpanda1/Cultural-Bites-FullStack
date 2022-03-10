@@ -1,0 +1,33 @@
+/**
+ * 
+ */
+package com.cultural.bites.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cultural.bites.model.Post;
+import com.cultural.bites.repository.PostRepository;
+
+/**
+ * @author siddi
+ *
+ */
+@Service
+public class PostServiceImpl {
+	
+	@Autowired
+	private PostRepository postRepository;
+	
+	
+	public Post savePost(Post post) {
+		return postRepository.save(post);
+	}
+	
+	
+	public List<Post> getAllPosts(){
+		return postRepository.findAll();
+	}
+}

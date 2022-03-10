@@ -1,0 +1,5 @@
+package com.cultural.bites.repository;
+
+public interface PostRepository {
+
+}

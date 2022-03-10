@@ -1,0 +1,48 @@
+/**
+ * 
+ */
+package com.cultural.bites.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.cultural.bites.model.Post;
+import com.cultural.bites.repository.PostRepository;
+
+/**
+ * @author siddi
+ *
+ */
+@Service
+public class PostServiceImpl implements PostService{
+	
+	@Autowired
+	private PostRepository postRepository;
+	
+	@Override
+	public Post savePost(Post post) {
+		return postRepository.save(post);
+	}
+	
+	@Override
+	public List<Post> getAllPosts(){
+		return postRepository.findAll();
+	}
+	
+	@Override
+	public Post updatePost (Post post) {
+		Post updatedPost = postRepository.findById(post.getId()).orElse(null);
+		updatedPost.setPost(post.getPost());
+		return postRepository.save(updatedPost);
+	}
+	
+	@Override
+	public Integer deletePost(@PathVariable Integer id){
+		postRepository.deleteById(id);
+		return id;
+		
+	}
+}

@@ -1,0 +1,11 @@
+package com.cultural.bites.service;
+
+import java.util.List;
+
+import com.cultural.bites.model.Post;
+
+public interface PostService {
+	public Post savePost(Post post);
+	public List<Post> getAllPosts();
+	
+}

@@ -1,0 +1,18 @@
+package com.cultural.bites.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.cultural.bites.model.Post;
+import com.cultural.bites.service.Edit;
+import com.cultural.bites.service.Update;
+
+@Repository
+public interface PostRepository extends JpaRepository<Post, Integer>{
+
+	
+
+	
+
+
+}
